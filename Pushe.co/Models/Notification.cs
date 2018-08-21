@@ -6,8 +6,16 @@ using System.Text;
 
 namespace Pushe.co
 {
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class Notification
     {
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Notification()
         {
             Action = new PusheAction();
