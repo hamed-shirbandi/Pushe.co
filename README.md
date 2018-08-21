@@ -13,6 +13,7 @@ You can also view the [package page](https://www.nuget.org/packages/Pushe.co) on
 # How to use ?
 
 1- install package from nuget
+
 2- add required services  as below :
 ```code
  services.AddPushe(options=>
