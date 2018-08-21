@@ -19,6 +19,7 @@ You can also view the [package page](https://www.nuget.org/packages/Pushe.co) on
                services.AddPushe(options=>
                 {
                   options.AccessToken = "YOUR_PUSHE_ACCESS_TOKEN";
+                  
                  });
 ```
 3- send push notification by using IPusheService:
