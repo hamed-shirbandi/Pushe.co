@@ -14,7 +14,7 @@ You can also view the [package page](https://www.nuget.org/packages/Pushe.co) on
 
 1- install package from nuget
 
-2- add required services  as below :
+2- add required services Startup class as below :
 ```code
                services.AddPushe(options=>
                 {
