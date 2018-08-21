@@ -16,14 +16,14 @@ You can also view the [package page](https://www.nuget.org/packages/Pushe.co) on
 
 2- add required services  as below :
 ```code
- services.AddPushe(options=>
-            {
-                options.AccessToken = "YOUR_PUSHE_ACCESS_TOKEN";
-            });
+               services.AddPushe(options=>
+                {
+                  options.AccessToken = "YOUR_PUSHE_ACCESS_TOKEN";
+                 });
 ```
 3- send push notification by using IPusheService:
 ```code
-var pusheService = serviceProvider.GetRequiredService<IPusheService>();
+               var pusheService = serviceProvider.GetRequiredService<IPusheService>();
 
                 var push = new PusheJsonModel
                 {
