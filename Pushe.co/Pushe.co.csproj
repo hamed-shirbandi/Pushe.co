@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Title>Pushe.co</Title>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>Send push notification by pushe.co based on .NET Standard</Description>
     <VersionPrefix>1.0.0</VersionPrefix>
@@ -12,13 +13,15 @@
     <RootNamespace>Pushe.co</RootNamespace>
     <PackageId>Pushe.co</PackageId>
     <PackageTags>push;notification;pushe;pushe.co</PackageTags>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/hamed-shirbandi/pushe.co</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
+    <iconUrl>https://pushe.co/static/images/logo.png</iconUrl>
     <copyright>Copyright 2017 codeblock.ir</copyright>
     <PackageTargetFallback></PackageTargetFallback>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   
   <ItemGroup>
@@ -46,7 +49,7 @@
     <PlatformTarget>anycpu</PlatformTarget>
   </PropertyGroup>
   <Target Name="PostcompileScript" AfterTargets="Build">
-    <Exec Command="dotnet pack --output $(NugetLocalCashePath) --no-build --configuration $(Configuration)" />
+    <Exec Command="dotnet pack --no-build --configuration $(Configuration)" />
   </Target>
   
 </Project>
