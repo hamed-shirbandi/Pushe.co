@@ -2,6 +2,8 @@
 
 Simple library to send push notification by [pushe.co](https://www.pushe.co)
 
+[Article in persian](http://www.codeblock.ir/article/43)
+
 # Install via NuGet
 
 To install Pushe.co, run the following command in the Package Manager Console
