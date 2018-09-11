@@ -31,7 +31,6 @@ namespace Pushe.co.Example.Console
 
                 var push = new PusheJsonModel
                 {
-                    Applications = new string[] { "ir.My.app" },
                     Notification = new Notification
                     {
                         Title = "test by console app",
