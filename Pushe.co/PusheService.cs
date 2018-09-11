@@ -38,6 +38,8 @@ namespace Pushe.co
         /// </summary>
         public async Task SendAsync(PusheJsonModel pusheJsonModel)
         {
+            var applications = _options.Applications.Split(',');
+            pusheJsonModel.Applications = applications;
 
             var settings = new JsonSerializerSettings();
             settings.ContractResolver = new LowercaseContractResolver();
@@ -80,8 +82,8 @@ namespace Pushe.co
                 request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 request.Headers.Add("Authorization", $"Token {_options.AccessToken}");
                 request.Headers.Add("Accept", "application/json");
-                var response =  client.SendAsync(request).Result;
-                var responseBody =  response.Content.ReadAsStringAsync().Result;
+                var response = client.SendAsync(request).Result;
+                var responseBody = response.Content.ReadAsStringAsync().Result;
             }
         }
 

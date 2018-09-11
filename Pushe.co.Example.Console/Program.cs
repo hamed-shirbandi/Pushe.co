@@ -26,6 +26,7 @@ namespace Pushe.co.Example.Console
         private static async Task SendPusheNoty()
         {
                 var serviceProvider = GetServiceProvider();
+            
                 var pusheService = serviceProvider.GetRequiredService<IPusheService>();
 
                 var push = new PusheJsonModel
@@ -62,6 +63,7 @@ namespace Pushe.co.Example.Console
             services.AddPushe(options =>
             {
                 options.AccessToken = "YOUR_PUSHE_ACCESS_TOKEN";
+                options.Applications = "APP_Name1,APP_Name2";
             });
 
             return services.BuildServiceProvider();
