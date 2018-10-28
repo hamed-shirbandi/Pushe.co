@@ -21,6 +21,7 @@ You can also view the [package page](https://www.nuget.org/packages/Pushe.co) on
                services.AddPushe(options=>
                 {
                   options.AccessToken = "YOUR_PUSHE_ACCESS_TOKEN";
+                  options.Applications = "APP_Name1,APP_Name2";
                   
                  });
 ```
@@ -30,7 +31,6 @@ You can also view the [package page](https://www.nuget.org/packages/Pushe.co) on
 
                 var push = new PusheJsonModel
                 {
-                    Applications = new string[] { "ir.My.app" },
                     Notification = new Notification
                     {
                         Title = "test by console app",
