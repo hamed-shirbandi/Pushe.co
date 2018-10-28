@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace Pushe.co
 {
+
+    /// <summary>
+    /// 
+    /// </summary>
     public class PusheService : IPusheService
     {
         #region Fields
@@ -38,21 +42,23 @@ namespace Pushe.co
         /// </summary>
         public async Task SendAsync(PusheJsonModel pusheJsonModel)
         {
-            var applications = _options.Applications.Split(',');
-            pusheJsonModel.Applications = applications;
-
-            var settings = new JsonSerializerSettings();
-            settings.ContractResolver = new LowercaseContractResolver();
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new LowercaseContractResolver()
+            };
             var myContent = JsonConvert.SerializeObject(pusheJsonModel, Formatting.Indented, settings);
             var buffer = Encoding.UTF8.GetBytes(myContent);
             var byteContent = new ByteArrayContent(buffer);
 
             using (var client = new HttpClient())
             {
-                var request = new HttpRequestMessage();
-                request.Method = HttpMethod.Post;
-                request.RequestUri = new Uri(_apiUrl);
-                request.Content = byteContent;
+                var request = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Post,
+                    RequestUri = new Uri(_apiUrl),
+                    Content = byteContent
+                };
+
                 request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 request.Headers.Add("Authorization", $"Token {_options.AccessToken}");
                 request.Headers.Add("Accept", "application/json");
@@ -61,31 +67,6 @@ namespace Pushe.co
             }
         }
 
-
-
-        /// <summary>
-        /// Send Noty By Pushe.co Service
-        /// </summary>
-        public void Send(PusheJsonModel pusheJsonModel)
-        {
-
-            var myContent = JsonConvert.SerializeObject(pusheJsonModel);
-            var buffer = Encoding.UTF8.GetBytes(myContent);
-            var byteContent = new ByteArrayContent(buffer);
-
-            using (var client = new HttpClient())
-            {
-                var request = new HttpRequestMessage();
-                request.Method = HttpMethod.Post;
-                request.RequestUri = new Uri(_apiUrl);
-                request.Content = byteContent;
-                request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                request.Headers.Add("Authorization", $"Token {_options.AccessToken}");
-                request.Headers.Add("Accept", "application/json");
-                var response = client.SendAsync(request).Result;
-                var responseBody = response.Content.ReadAsStringAsync().Result;
-            }
-        }
 
 
         #endregion

@@ -31,6 +31,7 @@ namespace Pushe.co.Example.Console
 
                 var push = new PusheJsonModel
                 {
+                    Applications=new string[] {"my_app_name" },
                     Notification = new Notification
                     {
                         Title = "test by console app",
@@ -62,7 +63,6 @@ namespace Pushe.co.Example.Console
             services.AddPushe(options =>
             {
                 options.AccessToken = "YOUR_PUSHE_ACCESS_TOKEN";
-                options.Applications = "APP_Name1,APP_Name2";
             });
 
             return services.BuildServiceProvider();

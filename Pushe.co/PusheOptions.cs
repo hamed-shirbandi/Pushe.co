@@ -11,7 +11,6 @@ namespace Pushe.co
    public class PusheOptions
     {
         public string AccessToken { get; set; }
-        public string Applications { get; set; }
         
     }
 }

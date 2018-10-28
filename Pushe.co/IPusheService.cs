@@ -2,9 +2,18 @@
 
 namespace Pushe.co
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IPusheService
     {
-        void Send(PusheJsonModel pusheJsonModel);
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pusheJsonModel"></param>
+        /// <returns></returns>
         Task SendAsync(PusheJsonModel pusheJsonModel);
     }
 }
