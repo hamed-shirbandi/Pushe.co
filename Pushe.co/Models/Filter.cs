@@ -8,30 +8,30 @@ namespace Pushe.co
     {
         public Filter()
         {
-            IMEI = new string[] { };
-            Device_Id = new string[] { };
-            Instance_Id = new string[] { };
+            Pushe_Id = new string[] { };
+            //Device_Id = new string[] { };
+            //Instance_Id = new string[] { };
         }
 
 
         /// <summary>
         /// 
         /// </summary>
-        public string[] IMEI { get; set; }
+        public string[] Pushe_Id { get; set; }
 
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public string[] Device_Id { get; set; }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //public string[] Device_Id { get; set; }
 
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public string[] Instance_Id { get; set; }
+        ///// <summary>
+        ///// 
+        ///// </summary>
+        //public string[] Instance_Id { get; set; }
 
     }
 
