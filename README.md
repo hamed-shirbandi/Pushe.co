@@ -40,7 +40,7 @@ You can also view the [package page](https://www.nuget.org/packages/Pushe.co) on
                     Filter = new Filter
                     {
                         //by pushe id
-                        IMEI = new string[] { "pid_31b1-33d3-30" },
+                        Pushe_Id = new string[] { "pid_31b1-33d3-30" },
                     }
                 };
 
